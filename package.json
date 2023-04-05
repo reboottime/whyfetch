@@ -1,19 +1,28 @@
 {
-  "name": "httpclient",
+  "name": "whyfetch",
   "version": "1.0.0",
-  "description": "A httpc client built with window.fetch",
+  "description": "A http client built with window.fetch",
   "main": "dist/index.js",
   "files": [
     "dist"
   ],
   "types": "dist/index.d.ts",
+  "dependencies": {
+    "typescript": "^5.0.3"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reboottime/httpClient.git"
+  },
   "keywords": [],
-  "author": "Kate Zhang",
+  "author": "",
   "license": "MIT",
-  "devDependencies": {
-    "typescript": "^5.0.3"
-  }
+  "bugs": {
+    "url": "https://github.com/reboottime/httpClient/issues"
+  },
+  "homepage": "https://github.com/reboottime/httpClient#readme"
 }
