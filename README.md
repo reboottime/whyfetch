@@ -4,6 +4,14 @@ An browser side httpClient crafted with window.fetch.
 
 ## Hot use it
 
+- Install package
+
+```sh
+yarn add whyfetch
+```
+
+- How to use it
+
 ```ts
 import HttpClient from "whyfetch";
 
