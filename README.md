@@ -74,3 +74,60 @@ class OrderClient extends HttpClient {
 }
 ```
 
+- Abort a request
+
+```ts
+import React, { useState, useEffect } from 'react';
+
+import HttpClient from './HttpClient';
+
+const httpClient = new HttpClient('https://example.com/api');
+
+const apiPath = 'users';
+const query = {
+  city: 'LA'
+}
+
+function MyComponent() {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    setLoading(true);
+    const queryOption = {
+      apiPath,
+      query
+    };
+
+    httpClient
+      .get(queryOption)
+      .then((response) => setData)
+      .catch((error) => {
+        if (error.name !== 'AbortError') {
+          setError(error.message);
+          setLoading(false);
+        }
+      });
+
+    return () => {
+      httpClient.abort({
+        ...queryOption,
+        method: "GET"
+      });
+    };
+  }, []);
+
+  return (
+    <div>
+      {data && (
+        <ul>
+          {data.map((item) => (
+            <li key={item.id}>{item.name}</li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
+export default MyComponent;
+```
