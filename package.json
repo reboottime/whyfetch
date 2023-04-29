@@ -1,5 +1,6 @@
 {
   "name": "whyfetch",
+  "version": "1.0.0",
   "description": "A http client built with window.fetch",
   "main": "dist/index.js",
   "files": [
