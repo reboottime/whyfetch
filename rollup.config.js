@@ -1,7 +1,8 @@
-const typescript = require("@rollup/plugin-typescript").default;
-const nodeResolve = require("@rollup/plugin-node-resolve").nodeResolve;
-const commonjs = require("@rollup/plugin-commonjs").default;
-const { terser } = require("rollup-plugin-terser");
+/* eslint-disable @typescript-eslint/no-var-requires */
+const typescript = require('@rollup/plugin-typescript').default;
+const nodeResolve = require('@rollup/plugin-node-resolve').nodeResolve;
+const commonjs = require('@rollup/plugin-commonjs').default;
+const { terser } = require('rollup-plugin-terser');
 
 const plugins = [
   typescript(),
@@ -11,23 +12,23 @@ const plugins = [
 ];
 
 module.exports = {
-  input: "src/index.ts",
+  input: 'src/index.ts',
   output: [
     {
-      format: "umd",
-      name: "MyLibrary",
-      file: "dist/index.js",
+      format: 'umd',
+      name: 'MyLibrary',
+      file: 'dist/index.js',
       sourcemap: true,
     },
     {
-      format: "umd",
-      name: "MyLibrary",
-      file: "dist/index.min.js",
+      format: 'umd',
+      name: 'MyLibrary',
+      file: 'dist/index.min.js',
       sourcemap: true,
     },
     {
-      format: "es",
-      file: "dist/esm/index.js",
+      format: 'es',
+      file: 'dist/esm/index.js',
       sourcemap: true,
     },
   ],
